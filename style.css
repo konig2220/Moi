@@ -1,0 +1,214 @@
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #F1F1F1;
+}
+
+body {
+  background: rgb(2, 2, 36);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+header {
+  display: grid;
+  place-content: center;
+  padding: 20px;
+}
+
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+header ul li a {
+  color: #F1F1F1;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+header ul li a:hover,
+header ul li a:focus {
+  color: #FFDF00;
+  transform: scale(1.2);
+  border-bottom: solid #FFDF00 1px;
+}
+
+/* SECTION PRINCIPALE */
+.corps {
+  margin-top: 15px;
+  display: grid;
+  place-content: center;
+  height: 90vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.corps h2 {
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.4;
+}
+
+.corps h2 span {
+  font-size: clamp(36px, 6vw, 56px);
+  color: #FFDF00;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  animation: b 1.5s ease-in-out infinite;
+}
+
+@keyframes b {
+  0% { text-shadow: 0 0 20px rgba(255, 215, 0, 1); }
+  50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0); }
+  100% { text-shadow: 0 0 20px rgba(255, 215, 0, 1); }
+}
+
+/* BOUTON */
+.pt {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.btn1 {
+  background: transparent;
+  border: #FFDF00 1px solid;
+  color: #FFDF00;
+  padding: 10px 33px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.btn1:hover {
+  color: rgb(2, 2, 36);
+  background-color: rgba(255, 215, 0, 1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  transform: scale(1.1);
+}
+
+/* ICONES SOCIAUX */
+.sociaux {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 70px;
+  gap: 20px;
+}
+
+.logo {
+  border-radius: 50%;
+  color: #FFDF00;
+  padding: 8px;
+  border: #FFDF00 1px solid;
+  cursor: pointer;
+  animation: a 1.5s ease-in-out infinite;
+  transition: 0.3s;
+  font-size: 28px;
+}
+
+.logo:hover {
+  color: rgb(2, 2, 36);
+  background-color: rgba(255, 215, 0, 1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  transform: scale(1.1);
+}
+
+@keyframes a {
+  0% { transform: translateY(-10px); }
+  50% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+
+.slide-in-left,
+.slide-in-right,
+.slide-in-top,
+.slide-in-bottom {
+  opacity: 0;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+}
+
+.slide-in-left { animation-name: slideLeft; }
+.slide-in-right { animation-name: slideRight; }
+.slide-in-top { animation-name: slideTop; }
+.slide-in-bottom { animation-name: slideBottom; }
+
+@keyframes slideLeft {
+  from { 
+    transform: translateX(-100px); 
+    opacity: 0; 
+  }
+  to   { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideTop {
+  from { transform: translateY(-100px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideBottom {
+  from { transform: translateY(100px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* SECTION À PROPOS */
+.aprop {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.apropos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .apropos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+}
+
+.moi p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #F1F1F1;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 0 5vw;
+}
+
+.img img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  border: #FFDF00 2px solid;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  animation: a 1.5s ease-in-out infinite;
+  margin: 0 auto;
+  display: block;
+}
